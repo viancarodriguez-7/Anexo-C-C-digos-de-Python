@@ -1,0 +1,27 @@
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Matriz DCT redondeada
+dct_matrix_rounded = np.array([
+    [-125,  26,  -4,  74,  42,   0,  3,  1],
+    [  54, -36, -121,  42, -49,   0,  5, 18],
+    [  87,  63,  38,  59,  -3, -19,  4,  3],
+    [ -78,  37,  -5, -46,  65,   1,  3,  3],
+    [  -7,  18,  13,  -4,  -3,   1,  3,  3],
+    [  -5,  13,  33,  -3, -25,   1,  2, 22],
+    [   3,  -1,  -1,  -3,  -1,   1,  1,  1],
+    [   2,   0,   0,   0,  -1,   1,  1,  0]
+])
+
+# Crear el mapa de calor
+plt.figure(figsize=(8, 6))
+sns.heatmap(dct_matrix_rounded, annot=True, cmap="gray", fmt="d", linewidths=0.5, cbar=True, vmin=-128, vmax=127)
+
+# Configuración del gráfico
+plt.title("Mapa de Calor de la Matriz DCT")
+plt.xlabel("Coeficientes de frecuencia (Horizontal)")
+plt.ylabel("Coeficientes de frecuencia (Vertical)")
+
+# Mostrar el gráfico
+plt.show()
